@@ -39,10 +39,12 @@ public class DisciplinaController {
     
     @RequestMapping(method = RequestMethod.PUT)
     public void alterarDisciplina(@RequestBody Disciplina disciplina) {
+        disciplinas.remove(disciplina);
+        disciplinas.add(disciplina);
     }        
     
     @RequestMapping(method = RequestMethod.DELETE)
     public void excluirDisciplina(@PathVariable Long id) {
+        disciplinas.remove(disciplinas.get(id));
     }        
-    
 }

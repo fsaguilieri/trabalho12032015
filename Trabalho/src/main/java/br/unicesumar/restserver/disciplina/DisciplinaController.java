@@ -27,7 +27,13 @@ public class DisciplinaController {
     }
     
     @RequestMapping(method = RequestMethod.POST)
-    public void criarDisciplina(@RequestBody Disciplina disciplina) {
+    public Exception criarDisciplina(@RequestBody Disciplina disciplina) {
+        if(!disciplinas.contains(disciplina)){
+            disciplinas.add(disciplina);
+        }else{
+            return new Exception("Disciplina Já Existe");
+        }
+        return null;
         
     }        
     

@@ -21,9 +21,11 @@ function DisciplinaController($scope,$http) {
 
     
     function funcaoExcluir(disciplina) {
+        http.delete("/disciplinas",disciplina).success(onSuccess).error(onError);;
     }
     
     function funcaoSalvar() {
+        http.post("/disciplinas",disciplina).success(onSuccess).error(onError);
     }
     
     function funcaoCarregar() {

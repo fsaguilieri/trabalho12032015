@@ -1,5 +1,6 @@
 package br.unicesumar.restserver.disciplina;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
@@ -11,16 +12,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/disciplina")
+@RequestMapping("/disciplinas")
 @Transactional
 public class DisciplinaController {
 
     @Autowired
     private EntityManager em;
+    
+    private List<Disciplina> disciplinas = new ArrayList();
 
-
+    @RequestMapping(method = RequestMethod.GET)
     public List<Disciplina> getDisciplina() {
-        return null;
+        return disciplinas;
     }
     
     @RequestMapping(method = RequestMethod.POST)

@@ -1,5 +1,5 @@
 package br.unicesumar.restserver.disciplina;
 
-public class DisciplinaRepository {
+public interface DisciplinaRepository {
     
 }

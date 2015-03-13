@@ -43,7 +43,4 @@ public class Disciplina {
     public void setPeso(Double peso) {
         this.peso = peso;
     }
-    
-    
-    
 }
